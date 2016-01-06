@@ -1,0 +1,18 @@
+
+
+<template name="lists">
+    <h2>Lists for user {{currentUsername}} </h2> 
+    <ul>
+        {{#each list}}
+            <li><a href="{{pathFor route='listpage'}}">{{name}}</a></li>
+        {{/each}}
+    </ul>
+    {{> addList}}
+</template>
+
+<template name="addList">
+    <form>Create a new list:
+        <input type="text" placeholder="List name here..." name="listName">
+        <!-- <button type="submit">Submit</button> NOT NEEDED! -->
+    </form>
+</template>

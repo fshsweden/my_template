@@ -27,6 +27,10 @@
     */
     incompleteCount: function () {
       return Tasks.find({checked: {$ne: true}}).count();
+    },
+
+    lastErrorMsg: function() {
+      return Session.get("errormsg");
     }
   });
 

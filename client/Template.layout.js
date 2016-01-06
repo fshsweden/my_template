@@ -1,4 +1,12 @@
-Template.layout.isChecked = function () {
-  var id = this.id;
-  return Session.get(id) ? "checked" : false;
-};
+	
+Template.layout.helpers({
+
+	'get_error': function() {
+		return Session.get("errormsg");
+	},
+
+	'set_error': function(err) {
+		Session.set("errormsg", err);
+	}
+});
+
