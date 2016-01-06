@@ -4,41 +4,6 @@
     <p>Welcome to the Todos application.</p>
 </template>
 
-<template name="main_layout">
-    
-    <h1>Smart application</h1>
-
-    {{> navigation}}
-    
-    {{#if currentUser}}
-        {{> lists}}
-    {{/if}}
-
-    {{> yield}}
-
-    <hr />
-    
-    <h2>{{get_error}}</h2>
-    
-    <hr />
-    <p>Copyright &copy; Todos, 2014-2016.</p>
-    
-</template>
-
-<template name="navigation">
-    <ul>
-        <li><a href="{{pathFor route='home'}}">Home</a></li>
-        {{#if currentUser}}
-            <li><a href="#" class="logout">Logout</a></li>
-        {{else}}
-            <li><a href="{{pathFor route='register'}}">Register</a></li>
-            <li><a href="{{pathFor route='login'}}">Login</a></li>
-        {{/if}}
-    </ul>
-</template>
-
-
-
 <!-- USERS AND ACCOUNTS -->
 
 <template name="register">
@@ -63,8 +28,7 @@
 <!-- LISTS -->
 
 <template name="lists">
-
-    <h2>Lists {{currentUser}} </h2> 
+    <h2>Lists for user {{currentUsername}} </h2> 
     <ul>
         {{#each list}}
             <li><a href="{{pathFor route='listpage'}}">{{name}}</a></li>
@@ -88,13 +52,9 @@
 </template>
 
 <template name="all_todos_in_list">
-
-    <h3>All ToDo's in List</h3>
-
+    <h3>All ToDo's in List {{name}}</h3>
     <p>{{_id}}</p>
-    
     {{> addTodo}}
-    
     <ul>
         {{#each todo}}
             {{> todoItem}}
@@ -108,7 +68,15 @@
 <template name="todoItem">
     <li>
         <input type="text" value="{{name}}" name="todoItem">
-        [<a href="#" class="delete-todo">Delete</a>]
+        <span>
+            [<a href="#" class="delete-todo">Delete</a>]
+        </span>
+
+        <span>
+            <form>
+                <input type="checkbox" id="feedEmailSubscribe" checked={{isChecked}}>
+            </form>
+            </span>
     </li>
 </template>
 
@@ -118,8 +86,6 @@
         <input type="text" placeholder="Type a task here..." name="todoName">
     </form>
 </template>
-
-
 
 <template name="task">
     <h2>*Task*</h2>

@@ -1,6 +1,6 @@
 
 Router.configure({
-    layoutTemplate: 'main_layout'
+    layoutTemplate: 'layout'
 });
 
 /*
@@ -52,7 +52,6 @@ Router.route('/list/:_id', {
 	layout: 'layoutTemplate',
 	name: 'listpage',
     data: function(){
-    	console.log("******************** DATA ************************");
         var currentList = this.params._id;
         return Lists.findOne({ _id: currentList });
     }

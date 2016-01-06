@@ -1,0 +1,20 @@
+<template name="layout">
+    
+    <h1>Smart application</h1>
+
+    {{> navigation}}
+    
+    {{#if currentUser}}
+        {{> lists}}
+    {{/if}}
+
+    {{> yield}}
+
+    <hr />
+    
+    <h2>{{get_error}}</h2>
+    
+    <hr />
+    <p>Copyright &copy; Todos, 2014-2016.</p>
+    
+</template>
