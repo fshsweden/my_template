@@ -1,0 +1,24 @@
+
+<template name="prices">
+    <h2>Prices </h2> 
+    <table>
+        {{#each prices}}
+	    <tr>
+            {{> price}}
+    	</tr>
+    	{{/each}}
+    </table>
+    
+</template>
+
+<template name="price">
+	<td>{{product}}</td>
+	<td>{{bidqty}}</td>
+	<td>{{bid}}</td>
+	<td>{{ask}}</td>
+	<td>{{askqty}}</td>
+	<td>{{last}}</td>
+	<td>{{lastqty}}</td>
+	<td>{{volume}}</td>
+	<td>{{time}}</td>
+</template>

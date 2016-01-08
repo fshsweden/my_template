@@ -43,6 +43,11 @@ Router.route('/register', {
 	layout: 'layoutTemplate'
 });
 
+Router.route('/prices', {
+    name: 'prices',
+    layout: 'layoutTemplate'
+});
+
 Router.route('/login', {
 	name: 'login',
 	layout: 'layoutTemplate'

@@ -1,16 +1,11 @@
 <template name="layout">
-    
-    <h1>Smart application</h1>
 
     {{> navigation}}
-    
-    {{> yield}}
 
-    <hr />
-    
-    <h2>{{get_error}}</h2>
-    
-    <hr />
-    <p>Copyright &copy; Todos, 2014-2016.</p>
-    
+    <div class="container">
+	    <div class="alert alert-danger" role="alert">{{lastErrorMsg}}</div>
+    	{{> yield}}
+	    <p>Copyright &copy; Todos, 2014-2016.</p>
+    </div>
+
 </template>

@@ -46,5 +46,17 @@ Meteor.methods({
       throw new Meteor.Error("not-authorized");
     }
     Tasks.update(taskId, { $set: { private: setToPrivate } });
+  },
+
+
+
+  updateProductPrice: function(product, fields) {
+
+    console.log("arg1:" + JSON.stringify(product));
+    // console.log("arg2:" + JSON.stringify(fields));
+
+    var o = JSON.parse(product);
+    Prices.upsert({product: o.product}, {$set: o});
   }
+
 });

@@ -1,11 +1,11 @@
 	
 Template.layout.helpers({
 
-	'get_error': function() {
+	'lastErrorMsg': function() {
 		return Session.get("errormsg");
 	},
 
-	'set_error': function(err) {
+	'setLastErrorMsg': function(err) {
 		Session.set("errormsg", err);
 	}
 });
