@@ -1,14 +1,24 @@
 
+<template name="priceform">
+	<form id="updateform" class="new-symbol">
+		<label for="product">Product</label>
+        <input type="text" name="product" placeholder="Type to add symbol" />
+        <input type="text" name="bid" placeholder="Bid" />
+        <input type="text" name="ask" placeholder="Ask" />
+        <button type="submit">Submit</button>
+    </form>
+ </template>
+
 <template name="prices">
     <h2 class="header">Prices </h2> 
+	{{> priceform}}
     <table class="pricetable">
         {{#each prices}}
 	    <tr>
             {{> price}}
     	</tr>
     	{{/each}}
-    </table>
-    
+    </table>    
 </template>
 
 <template name="price">
@@ -22,3 +32,4 @@
 	<td>{{volume}}</td>
 	<td>{{time}}</td>
 </template>
+
